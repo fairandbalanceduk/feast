@@ -12,7 +12,7 @@ class HttpRequestProviderSpec extends BaseSpec {
   val requestProvider: HttpRequestProvider = new HttpRequestProvider(config)
 
   "A RequestProvider.buildRequest" should "create an HttpRequest object" in {
-    requestProvider.buildRequest("test") shouldEqual HttpRequest(uri = config.baseUri + "test")
+    requestProvider.buildRequest("test") shouldEqual HttpRequest(uri = config.httpInterface + "test")
   }
 
 }

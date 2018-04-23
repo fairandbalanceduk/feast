@@ -6,9 +6,10 @@ import uk.co.fairandbalanced.feast.Config
 
 class HttpRequestProvider @Inject()(config: Config) {
 
+  // Builds a GET request pointing at [config.httpInterface]/[path]
   def buildRequest(path: String): HttpRequest = HttpRequest(
     HttpMethods.GET,
-    uri = Uri(config.baseUri + path)
+    uri = Uri(config.httpInterface + path)
   )
 
 }

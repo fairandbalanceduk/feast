@@ -1,8 +1,11 @@
 package uk.co.fairandbalanced.feast
 
-class Config() {
+import com.typesafe.config.ConfigFactory
 
-  // TODO - Read config from env
-  val baseUri: String = "http://akka.io"
+trait Config {
+
+  private val config = ConfigFactory.load("application.conf")
+
+  val httpInterface: String = config.getString("http.interface")
 
 }
