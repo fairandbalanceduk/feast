@@ -11,6 +11,7 @@ libraryDependencies ++= Seq(
   "com.typesafe.akka" %% "akka-actor" % "2.5.12",
   "com.typesafe.akka" %% "akka-http" % "10.1.1",
   "com.typesafe.akka" %% "akka-stream" % "2.5.12",
+  "com.typesafe.scala-logging" %% "scala-logging" % "3.5.0",
   "de.heikoseeberger" %% "akka-http-circe" % "1.18.0",
   "io.circe" %% "circe-generic" % "0.8.0",
   "io.circe" %% "circe-java8" % "0.8.0",
@@ -24,3 +25,8 @@ scalacOptions ++= Seq(
   "-feature",
   "-Xfatal-warnings"
 )
+
+
+lazy val root = (project in file(".")).
+  configs(Configs.all: _*).
+  settings(Testing.settings: _*)

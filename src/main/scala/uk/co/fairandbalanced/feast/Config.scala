@@ -8,4 +8,10 @@ trait Config {
 
   val httpInterface: String = config.getString("http.interface")
 
+  val apiKey: Option[String] = if (config.hasPath("auth.apiKey")) {
+    Some(config.getString("auth.apiKey"))
+  } else {
+    None
+  }
+
 }
