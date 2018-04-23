@@ -1,7 +1,7 @@
-package uk.co.fairandbalanced
+package uk.co.fairandbalanced.feast
 
 object Main extends App {
-  
+
   println("Hello World!")
-  
+
 }
