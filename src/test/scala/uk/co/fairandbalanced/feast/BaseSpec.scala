@@ -4,8 +4,9 @@ import org.scalamock.scalatest.MockFactory
 import org.scalatest.{BeforeAndAfter, FlatSpec, Matchers}
 import org.scalatest.concurrent.ScalaFutures
 import org.scalatest.time.{Millis, Seconds, Span}
+import uk.co.fairandbalanced.feast.http.HttpImplicits
 
-class BaseSpec extends FlatSpec with MockFactory with Matchers with ScalaFutures with BeforeAndAfter {
+class BaseSpec extends FlatSpec with MockFactory with Matchers with ScalaFutures with BeforeAndAfter with HttpImplicits {
 
   private val intervalDuration: Int = 500
 

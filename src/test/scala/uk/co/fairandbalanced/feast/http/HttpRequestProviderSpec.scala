@@ -8,11 +8,12 @@ class HttpRequestProviderSpec extends BaseSpec {
   // Mocked dependencies
   val config: Config = mock[Config]
 
-  // Object under test
-  val requestProvider: HttpRequestProvider = new HttpRequestProvider(config)
+  "A RequestProvider.buildRequest" should "generate an HttpRequest" in {
+    new HttpRequestProvider(config).buildRequest("").isInstanceOf[HttpRequest] shouldEqual true
+  }
 
-  "A RequestProvider.buildRequest" should "create an HttpRequest object" in {
-    requestProvider.buildRequest("test") shouldEqual HttpRequest(uri = config.httpInterface + "test")
+  "A RequestProvider.buildRequest" should "generate an accurate URI in the HttpRequest" in {
+    new HttpRequestProvider(config).buildRequest("test") shouldEqual HttpRequest(uri = config.httpInterface + "test")
   }
 
 }
